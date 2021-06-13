@@ -1,0 +1,7 @@
+@import '../com/*';
+
+.header {
+  width: 100%;
+  height: $header-height;
+  background-color: $header-back-color;
+}
