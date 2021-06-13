@@ -21,14 +21,12 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-# Aozora Bunko's Data
-!/tmp/storage
-!/tmp/storage/list_person_all_extended_utf8.csv
-!/tmp/storage/.keep
 
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
+# Aozora Bunko's Data
+!/storage/list_person_all_extended_utf8.csv
 
 /public/assets
 .byebug_history
