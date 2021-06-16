@@ -1,0 +1,15 @@
+<div id='previous-result'>
+  <% if @previous_flag == true then %>
+    <%= link_to '<', {action: 'previous_result'}, {remote: true, method: :get} %>
+  <% else %>
+    <div class='disable-operate'><</div>
+  <% end %>
+</div>
+<span id='result-index'></span>
+<div id='next-result'>
+  <% if @next_flag == true then %>
+    <%= link_to '>', {action: 'next_result'}, {remote: true, method: :get} %>
+  <% else %>
+    <div class='disable-operate'>></div>
+  <% end %>
+</div>

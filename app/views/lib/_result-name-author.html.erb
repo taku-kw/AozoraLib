@@ -1,0 +1,7 @@
+<% for result in search_result do %>
+  <div>
+    <%= link_to result.author, {action: 'search_name_title_by_author' , keyword: result.author}, {remote: true, method: :get} %>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,14 @@
+<% case session[:search_method] %>
+<% when 'title' then %>
+  $('#result-area').html("<%= j(render 'lib/result-name-title', search_result: @search_result) %>")
+<% when 'author' then %>
+  $('#result-area').html("<%= j(render 'lib/result-name-author', search_result: @search_result) %>")
+<% when 'title_by_author' then %>
+  $('#result-area').html("<%= j(render 'lib/result-name-title', search_result: @search_result) %>")
+<% when 'class' then %>
+  $('#result-area').html("<%= j(render 'lib/result-name-title', search_result: @search_result) %>")
+<% else %>
+  console.log('else' + '<%= @method %>')
+<% end %>
+
+$('#operate-result-area').html("<%= j(render 'lib/operate-result') %>")

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_085553) do
+ActiveRecord::Schema.define(version: 2021_06_16_001219) do
 
   create_table "libs", force: :cascade do |t|
     t.text "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_06_13_085553) do
     t.text "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title_yomi"
+    t.string "author_yomi"
   end
 
 end

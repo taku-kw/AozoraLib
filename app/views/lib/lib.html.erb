@@ -1,9 +1,25 @@
 <div class='lib'>
-  <div class='btn-area'>
-    <button class='btn' value='A'>BTN-A</button>
-    <button class='btn' value='B'>BTN-B</button>
-    <button class='btn' value='C'>BTN-C</button>
+  <div class='search-area'>
+    <div class='item-area-1'>
+      <div class='item-1'>
+        作品名
+        <%= render 'search-name-title' %>
+      </div>
+      <div class='item-1'>
+        作者名
+        <%= render 'search-name-author' %>
+      </div>
+      <div class='item-1'>
+        分野別
+        <%= render 'search-class' %>
+      </div>
+    </div>
   </div>
-  <div class='result-area'>
+  <div class='result-area' id='result-area'>
+  </div>
+  <div class='operate-result-area' id='operate-result-area'>
+    <%= render 'operate-result' %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'lib/lib' %>

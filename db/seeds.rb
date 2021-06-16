@@ -13,13 +13,16 @@ Lib.destroy_all
 # CSV.foreach('tmp/storage/list_short.csv', headers: true) do |fg|
 CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |fg|
   title = fg['作品名']
+  title_yomi = fg['ソート用読み']
   class_number = fg['分類番号']
   link = fg['XHTML/HTMLファイルURL']
   if /\p{katakana}/ === fg['姓'] then
     author = fg['名'] + fg['姓']
+    author_yomi = fg['名読みソート用'] + fg['姓読みソート用']
   else
     author = fg['姓'] + fg['名']
+    author_yomi = fg['姓読みソート用'] + fg['名読みソート用']
   end
 
-  Lib.create(title: title, author: author, class_number: class_number, link: link)
+  Lib.create(title: title, title_yomi: title_yomi, author: author, author_yomi: author_yomi, class_number: class_number, link: link)
 end

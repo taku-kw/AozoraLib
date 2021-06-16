@@ -1,7 +1,7 @@
 @import '../com/*';
 
 .lib {
-  height: 2000px;
+  height: 800px;
 
   .btn-area {
     width: 100%;
@@ -24,12 +24,110 @@
     }
   }
 
-  .result-area {
+  .search-area {
     width: 100%;
-    height: 200px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    text-align: center;
+    cursor: default;
+    user-select: none;
 
+    .item-area-1 {
+      background-color: lightskyblue;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+  
+      .item-1 {
+        width: 100px;
+        position: relative;
+        background-color: red;
+        padding: 5px 0;
+      }
+    }
+
+    .item-area-2 {
+      position: absolute;
+      display: none;
+
+      .item-2 {
+        width: 100px;
+        position: relative;
+        background-color: red;
+        padding: 5px 0;
+      }
+    }
+
+    .item-area-3 {
+      position: absolute;
+      left: 100px;
+      display: none;
+      top: 0px;
+
+      .item-3 {
+        width: 100px;
+        cursor: pointer;
+        background-color: red;
+        padding: 5px 0;
+      }
+
+      .item-3-kind {
+        width: 170px;
+      }
+    }
+  }
+
+  .result-area {
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+
+  }
+
+  .operate-result-area {
+    width: 90%;
+    height: 20px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 1.6rem;
+    color: black;
+    user-select: none;
+
+    #previous-result {
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+      &:active {
+        color: pink;
+      }
+    }
+    #next-result {
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+      &:active {
+        color: pink;
+      }
+    }
+    #result-index {
+      font-size: 1.2rem;
+    }
+
+    .disable-operate {
+      color: gray;
+      cursor: default;
+    }
   }
 }
