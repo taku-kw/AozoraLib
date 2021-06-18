@@ -1,0 +1,71 @@
+@import '../com/*';
+
+.show {
+  height: 800px;
+
+  .bookshelf-area {
+    width: 100%;
+    height: 500px;
+    padding-top: 50px;
+
+    .bookshelf {
+      width: 80%;
+      height: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+    }
+  }
+
+  .bookshelf-area {
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+
+  }
+
+  .operate-bookshelf-area {
+    width: 90%;
+    height: 20px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 1.6rem;
+    color: black;
+    user-select: none;
+
+    #previous-bookshelf {
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+      &:active {
+        color: pink;
+      }
+    }
+    #next-bookshelf {
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+      &:active {
+        color: pink;
+      }
+    }
+    #bookshelf-index {
+      font-size: 1.2rem;
+    }
+
+    .disable-operate {
+      color: gray;
+      cursor: default;
+    }
+  }
+
+}

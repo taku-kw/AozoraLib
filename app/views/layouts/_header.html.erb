@@ -1,3 +1,12 @@
 <header class='header'>
   <p>header</p>
+  <div class='session-area'>
+    <% if user_signed_in? then %>
+      <%= render 'layouts/logged-in' %>
+    <% else %>
+      <%= render 'layouts/not-logged-in' %>
+    <% end %>
+  </div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </header>

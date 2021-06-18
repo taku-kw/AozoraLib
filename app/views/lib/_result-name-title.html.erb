@@ -1,5 +1,8 @@
 <% for result in search_result do %>
   <div>
+    <% if user_signed_in? then %>
+      <%= link_to '+', {controller: 'my_bookshelf', action: 'new', book_id: result.id}, {method: 'get', remote: true} %>
+    <% end %>
     <a href=<%= result.link %> target="_blank" rel="noopener noreferrer"><%= result.title %></a>
   </div>
 <% end %>

@@ -1,0 +1,2 @@
+$('#bookshelf').html("<%= j(render 'my_bookshelf/bookshelf', books: @books) %>")
+$('#operate-bookshelf-area').html("<%= j(render 'my_bookshelf/operate-bookshelf', {next_flag: @next_flag, previous_flag: @previous_flag}) %>")

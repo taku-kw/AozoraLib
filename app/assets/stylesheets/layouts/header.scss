@@ -4,4 +4,27 @@
   width: 100%;
   height: $header-height;
   background-color: $header-back-color;
+  position: relative;
+
+  .session-area {
+    width: 250px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .btn {
+      cursor: pointer;
+      user-select: none;
+      padding: 5px;
+
+      &:hover {
+        background-color: red;
+      }
+    }
+  }
 }

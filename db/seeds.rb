@@ -8,7 +8,7 @@
 
 require 'csv'
 
-Lib.destroy_all
+Book.destroy_all
 
 # CSV.foreach('tmp/storage/list_short.csv', headers: true) do |fg|
 CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |fg|
@@ -24,5 +24,5 @@ CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |
     author_yomi = fg['姓読みソート用'] + fg['名読みソート用']
   end
 
-  Lib.create(title: title, title_yomi: title_yomi, author: author, author_yomi: author_yomi, class_number: class_number, link: link)
+  Book.create(title: title, title_yomi: title_yomi, author: author, author_yomi: author_yomi, class_number: class_number, link: link)
 end

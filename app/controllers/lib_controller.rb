@@ -6,7 +6,7 @@ class LibController < ApplicationController
   end
 
   def lib
-    @lib = Lib.first
+    @lib = Book.first
   end
 
   def contact
@@ -14,11 +14,11 @@ class LibController < ApplicationController
   end
 
   def search_name_title
-    @search_result = Lib.where('title_yomi like ?', params['keyword'] + '%').limit(SEARCH_OFFSET)
+    @search_result = Book.where('title_yomi like ?', params['keyword'] + '%').limit(SEARCH_OFFSET)
     session[:search_offset] = 0
     session[:keyword] = params['keyword']
     session[:search_method] = 'title'
-    session[:search_count] = Lib.where('title_yomi like ?', params['keyword'] + '%').count
+    session[:search_count] = Book.where('title_yomi like ?', params['keyword'] + '%').count
     if session[:search_count] <= session[:search_offset] then
       @next_flag = false
     else
@@ -28,11 +28,11 @@ class LibController < ApplicationController
   end
 
   def search_name_author
-    @search_result = Lib.where('author_yomi like ?', params['keyword'] + '%').limit(SEARCH_OFFSET).select(:author).distinct
+    @search_result = Book.where('author_yomi like ?', params['keyword'] + '%').limit(SEARCH_OFFSET).select(:author).distinct
     session[:search_offset] = 0
     session[:keyword] = params['keyword']
     session[:search_method] = 'author'
-    session[:search_count] = Lib.where('author_yomi like ?', params['keyword'] + '%').select(:author).distinct.count
+    session[:search_count] = Book.where('author_yomi like ?', params['keyword'] + '%').select(:author).distinct.count
     if session[:search_count] <= session[:search_offset] then
       @next_flag = false
     else
@@ -42,11 +42,11 @@ class LibController < ApplicationController
   end
 
   def search_name_title_by_author
-    @search_result = Lib.where(author: params[:keyword]).limit(SEARCH_OFFSET)
+    @search_result = Book.where(author: params[:keyword]).limit(SEARCH_OFFSET)
     session[:search_offset] = 0
     session[:keyword] = params['keyword']
     session[:search_method] = 'title_by_author'
-    session[:search_count] = Lib.where(author: session[:keyword]).count
+    session[:search_count] = Book.where(author: session[:keyword]).count
     if session[:search_count] <= (session[:search_offset] + SEARCH_OFFSET) then
       @next_flag = false
     else
@@ -56,11 +56,11 @@ class LibController < ApplicationController
   end
 
   def search_class
-    @search_result = Lib.where('class_number like ?', '% ' + params['keyword'] + '%').limit(SEARCH_OFFSET)
+    @search_result = Book.where('class_number like ?', '% ' + params['keyword'] + '%').limit(SEARCH_OFFSET)
     session[:search_offset] = 0
     session[:keyword] = params['keyword']
     session[:search_method] = 'class'
-    session[:search_count] = Lib.where('class_number like ?', '% ' + params['keyword'] + '%').count
+    session[:search_count] = Book.where('class_number like ?', '% ' + params['keyword'] + '%').count
     if session[:search_count] <= session[:search_offset] then
       @next_flag = false
     else
@@ -73,13 +73,13 @@ class LibController < ApplicationController
     session[:search_offset] += SEARCH_OFFSET
     case session[:search_method]
     when 'title' then
-      @search_result = Lib.where('title_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset])
+      @search_result = Book.where('title_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset])
     when 'author' then
-      @search_result = Lib.where('author_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset]).select(:author).distinct
+      @search_result = Book.where('author_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset]).select(:author).distinct
     when 'title_by_author' then
-      @search_result = Lib.where(author: session[:keyword]).limit(10).offset(session[:search_offset])
+      @search_result = Book.where(author: session[:keyword]).limit(10).offset(session[:search_offset])
     when 'class' then
-      @search_result = Lib.where('class_number like ?', '% ' + session[:keyword] + '%').limit(10).offset(session[:search_offset])
+      @search_result = Book.where('class_number like ?', '% ' + session[:keyword] + '%').limit(10).offset(session[:search_offset])
     end
     if session[:search_count] <= (session[:search_offset] + SEARCH_OFFSET) then
       @next_flag = false
@@ -93,13 +93,13 @@ class LibController < ApplicationController
     session[:search_offset] -= SEARCH_OFFSET
     case session[:search_method]
     when 'title' then
-      @search_result = Lib.where('title_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset])
+      @search_result = Book.where('title_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset])
     when 'author' then
-      @search_result = Lib.where('author_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset]).select(:author).distinct
+      @search_result = Book.where('author_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset]).select(:author).distinct
     when 'title_by_author' then
-      @search_result = Lib.where(author: session[:keyword]).limit(10).offset(session[:search_offset])
+      @search_result = Book.where(author: session[:keyword]).limit(10).offset(session[:search_offset])
     when 'class' then
-      @search_result = Lib.where('class_number like ?', '% ' + session[:keyword] + '%').limit(10).offset(session[:search_offset])
+      @search_result = Book.where('class_number like ?', '% ' + session[:keyword] + '%').limit(10).offset(session[:search_offset])
     end
     if session[:search_offset] == 0 then
       @previous_flag = false

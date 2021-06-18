@@ -1,0 +1,8 @@
+<% for book in books do %>
+  <div>
+    <span>
+      <%= link_to '―', {controller: 'my_bookshelf', action: 'delete', book_id: book.id}, {method: 'delete', remote: 'true'} %>
+    </span>
+    <a href=<%= book.link %> target="_blank" rel="noopener noreferrer"><%= book.title %></a>
+  </div>
+<% end %>

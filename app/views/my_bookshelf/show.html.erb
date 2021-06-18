@@ -1,0 +1,11 @@
+<div class='show'>
+  <div class='bookshelf-area'>
+    <div class='bookshelf' id='bookshelf'>
+      <%= render 'my_bookshelf/bookshelf', books: @books %>  
+    </div>
+    <div class='operate-bookshelf-area' id='operate-bookshelf-area'>
+      <%= render 'my_bookshelf/operate-bookshelf', {next_flag: @next_flag, previous_flag: @previous_flag} %>
+    </div>    
+  </div>
+</div>
+
