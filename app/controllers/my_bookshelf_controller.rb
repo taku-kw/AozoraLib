@@ -36,7 +36,7 @@ class MyBookshelfController < ApplicationController
   end
 
   def new
-    current_user.books = Book.where(id: params['book_id'])
+    current_user.books += Book.where(id: params['book_id'])
   end
 
   def delete
