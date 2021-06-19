@@ -19,7 +19,7 @@ class LibController < ApplicationController
     session[:keyword] = params['keyword']
     session[:search_method] = 'title'
     session[:search_count] = Book.where('title_yomi like ?', params['keyword'] + '%').count
-    if session[:search_count] <= session[:search_offset] then
+    if session[:search_count] <= (session[:search_offset] + SEARCH_OFFSET) then
       @next_flag = false
     else
       @next_flag = true

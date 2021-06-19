@@ -5,7 +5,7 @@ class MyBookshelfController < ApplicationController
     @books = current_user.books.limit(SEARCH_OFFSET)
     session[:my_bookshelf_search_offset] = 0
     session[:my_bookshelf_search_count] = current_user.books.count
-    if session[:my_bookshelf_search_count] <= session[:my_bookshelf_search_offset] then
+    if session[:my_bookshelf_search_count] <= (session[:my_bookshelf_search_offset] + SEARCH_OFFSET) then
       @next_flag = false
     else
       @next_flag = true
