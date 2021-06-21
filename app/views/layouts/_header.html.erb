@@ -1,5 +1,7 @@
 <header class='header'>
-  <p>header</p>
+  <div class='logo-area' style="color: white">
+    <%= link_to '青空図書館', '/', {class: 'logo'} %>
+  </div>
   <div class='session-area'>
     <% if user_signed_in? then %>
       <%= render 'layouts/logged-in' %>

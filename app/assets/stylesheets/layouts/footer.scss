@@ -4,4 +4,16 @@
   width: 100%;
   height: $footer-height;
   background-color: $footer-back-color;
+
+  .copyright-area {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .copyright {
+      font-size: 0.9em;
+      color: $font-color-gold;
+    }
+  }
 }

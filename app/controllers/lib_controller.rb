@@ -6,7 +6,7 @@ class LibController < ApplicationController
   end
 
   def lib
-    @lib = Book.first
+    
   end
 
   def contact

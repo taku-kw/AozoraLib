@@ -3,11 +3,11 @@
 .index {
   width: 100%;
   height: $main-full-height;
-  background-image: image_url("lib/index/dummy_1920x1080.jpg");
-  background-size: contain;
+  background-image: image_url("lib/index/bookshelf.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: hsl(238, 29%, 34%);
+  background-color: hsl(0, 0%, 98%);
   position: relative;
 
   .btn-area {
@@ -19,12 +19,14 @@
     .btn {
       height: 50px;
       width: 200px;
+      font-size: 1.2rem;
       text-align: center;
-      background-color: white;
+      padding-top: 5px;
+      background-color: hsl(38, 100%, 87%);
       border-radius: 25px;
 
       &:hover {
-        background-color: pink;
+        text-decoration: underline;
       }
     }
   }
