@@ -1,7 +1,14 @@
-<% for result in search_result do %>
-  <div>
-    <%= link_to result.author, {action: 'search_name_title_by_author' , keyword: result.author}, {remote: true, method: :get} %>
-  </div>
-<% end %>
+<div class='author-card-list'>
+  <% for result in search_result do %>
+    <%= link_to 'lib/search_name_title_by_author?keyword=' + result.author , remote: true, method: :get do %>
+      <div class='author-card'>
+        <%= image_tag 'lib/lib/author.svg' %>
+        <div class='author-name'>
+          <%= result.author %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 
