@@ -1,5 +1,5 @@
 class MyBookshelfController < ApplicationController
-  SEARCH_OFFSET = 10
+  SEARCH_OFFSET = 12
 
   def show
     @books = current_user.books.limit(SEARCH_OFFSET)

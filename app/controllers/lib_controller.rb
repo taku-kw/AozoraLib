@@ -1,5 +1,5 @@
 class LibController < ApplicationController
-  SEARCH_OFFSET = 10
+  SEARCH_OFFSET = 12
 
   def index
 
@@ -73,9 +73,9 @@ class LibController < ApplicationController
     session[:search_offset] += SEARCH_OFFSET
     case session[:search_method]
     when 'title' then
-      @search_result = Book.where('title_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset])
+      @search_result = Book.where('title_yomi like ?', session[:keyword] + '%').limit(SEARCH_OFFSET).offset(session[:search_offset])
     when 'author' then
-      @search_result = Book.where('author_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset]).select(:author).distinct
+      @search_result = Book.where('author_yomi like ?', session[:keyword] + '%').limit(SEARCH_OFFSET).offset(session[:search_offset]).select(:author).distinct
     when 'title_by_author' then
       @search_result = Book.where(author: session[:keyword]).limit(10).offset(session[:search_offset])
     when 'class' then
@@ -93,9 +93,9 @@ class LibController < ApplicationController
     session[:search_offset] -= SEARCH_OFFSET
     case session[:search_method]
     when 'title' then
-      @search_result = Book.where('title_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset])
+      @search_result = Book.where('title_yomi like ?', session[:keyword] + '%').limit(SEARCH_OFFSET).offset(session[:search_offset])
     when 'author' then
-      @search_result = Book.where('author_yomi like ?', session[:keyword] + '%').limit(10).offset(session[:search_offset]).select(:author).distinct
+      @search_result = Book.where('author_yomi like ?', session[:keyword] + '%').limit(SEARCH_OFFSET).offset(session[:search_offset]).select(:author).distinct
     when 'title_by_author' then
       @search_result = Book.where(author: session[:keyword]).limit(10).offset(session[:search_offset])
     when 'class' then

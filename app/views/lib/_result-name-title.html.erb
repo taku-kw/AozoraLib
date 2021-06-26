@@ -1,10 +1,19 @@
-<% for result in search_result do %>
-  <div>
-    <% if user_signed_in? then %>
-      <%= link_to '+', {controller: 'my_bookshelf', action: 'new', book_id: result.id}, {method: 'get', remote: true} %>
-    <% end %>
-    <a href=<%= result.link %> target="_blank" rel="noopener noreferrer"><%= result.title %></a>
-  </div>
-<% end %>
+<div class='book-card-list'>
+  <% for result in search_result do %>
+    <a href=<%= result.link %> target="_blank" rel="noopener noreferrer" class='book-card'>
+      <div class='book'>
+        <div class='book-title'>
+          <%= result.title %>
+        </div>
+        <div class='book-author'>
+          <%= result.author %>
+        </div>
+        <% if user_signed_in? then %>
+          <%= button_to '+', {controller: 'my_bookshelf', action: 'new', book_id: result.id}, {method: 'get', remote: true, class: 'add-bookshelf'} %>
+        <% end %>
+      </div> 
+    </a>
+  <% end %>
+</div>
 
 
