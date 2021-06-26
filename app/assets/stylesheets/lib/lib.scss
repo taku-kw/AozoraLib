@@ -35,7 +35,6 @@
     user-select: none;
 
     .item-area-1 {
-      background-color: lightskyblue;
       width: 1000px;
       display: flex;
       align-items: center;
@@ -47,6 +46,7 @@
         background-color: hsl(44, 44%, 88%);
         padding: 8px 0 5px;
         border: 1px solid black;
+        z-index: 1;
       }
     }
 
@@ -64,6 +64,7 @@
         background-color: hsl(44, 44%, 88%);
         padding: 8px 0 5px;
         border-right: 1px solid black;
+        z-index: 1;
       }
     }
 
@@ -79,6 +80,7 @@
         cursor: pointer;
         background-color: hsl(44, 44%, 88%);
         padding: 8px 0 5px;
+        z-index: 1;
       }
 
       .item-3-kind {
