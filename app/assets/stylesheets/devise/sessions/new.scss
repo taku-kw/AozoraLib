@@ -1,0 +1,78 @@
+@import '../../com/*';
+
+.devise_sessions_new {
+
+  height: $main-full-height;
+  min-height: 700px;
+  padding-top: 80px;
+  user-select: none;
+
+  .form-area {
+    height: 500px;
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+
+    .title-area {
+      display: flex;
+
+      .title {
+        margin: 0 auto 50px;
+        font-size: 2.0rem;
+        display: inline-block;
+        border-bottom: 3px solid black;
+      }
+    }
+
+    .contain {
+      width: 70%;
+      margin: 0 auto;
+      position: relative;
+
+      .type-area {
+        display: grid;
+        grid-template-columns: 1.3fr 3fr;
+        grid-auto-rows: 50px;
+        column-gap: 50px;
+        margin-bottom: 60px;
+
+        .label {
+          text-decoration: underline;
+        }
+
+        .field {
+          width: 100%;
+          border-bottom: 1px solid black;
+        }
+      }
+
+      .alert-pos {
+        position: absolute;
+        top: 110px;
+        width: 100%;
+        text-align: center;
+        color: red;
+      }
+
+      .btn-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        .btn {
+          border-bottom: 1px solid black;
+          &:hover {
+            border-bottom: 3px solid black;
+          }
+        }
+
+        .btn-text-large {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,18 @@ ja:
         remember_me: "ログインを記憶"
     models:
       user: "ユーザ"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "が空になっています。"
+            password:
+              blank: "が空になっています。"
+              too_short: "が短すぎます。(6文字以上)"
+            password_confirmation:
+              blank: "が空になっています。"
+              confirmation: "がパスワードと異なります。"
   devise:
     confirmations:
       new:
