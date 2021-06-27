@@ -1,8 +1,16 @@
-<% for book in books do %>
-  <div>
-    <span>
-      <%= link_to '―', {controller: 'my_bookshelf', action: 'delete', book_id: book.id}, {method: 'delete', remote: 'true'} %>
-    </span>
-    <a href=<%= book.link %> target="_blank" rel="noopener noreferrer"><%= book.title %></a>
-  </div>
-<% end %>
+<div class='book-card-list'>
+  <% for book in books do %>
+    <a href=<%= book.link %> target="_blank" rel="noopener noreferrer" class='book-card'>
+      <div class='book'>
+        <div class='book-title'>
+          <%= book.title %>
+        </div>
+        <div class='book-author'>
+          <%= book.author %>
+        </div>
+        <%= button_to '―', {controller: 'my_bookshelf', action: 'delete', book_id: book.id}, {method: 'delete', remote: 'true', class: 'del-bookshelf'} %>
+      </div>
+    </a>
+  <% end %>
+</div>
+

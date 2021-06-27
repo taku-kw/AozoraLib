@@ -9,7 +9,7 @@
           <%= result.author %>
         </div>
         <% if user_signed_in? then %>
-          <%= button_to '+', {controller: 'my_bookshelf', action: 'new', book_id: result.id}, {method: 'get', remote: true, class: 'add-bookshelf'} %>
+          <%= button_to '+', {controller: 'my_bookshelf', action: 'new'}, {method: 'get', remote: true, params: {book_id: result.id}, class: 'add-bookshelf'} %>
         <% end %>
       </div> 
     </a>

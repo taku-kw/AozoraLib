@@ -36,6 +36,7 @@ class MyBookshelfController < ApplicationController
   end
 
   def new
+    logger.debug('book_id : ' + params['book_id'].to_s)
     current_user.books += Book.where(id: params['book_id'])
   end
 

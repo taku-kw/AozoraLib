@@ -1,33 +1,63 @@
 @import '../com/*';
 
 .show {
-  height: 800px;
+  padding: 30px;
 
   .bookshelf-area {
-    width: 100%;
-    height: 500px;
-    padding-top: 50px;
-
-    .bookshelf {
-      width: 80%;
-      height: 300px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: white;
-    }
-  }
-
-  .bookshelf-area {
-    width: 90%;
-    height: 500px;
+    width: 1000px;
+    height: 730px;
     margin: 0 auto;
-    padding: 30px;
     background-color: white;
 
   }
 
+  .book-card-list {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-auto-rows: 200px;
+    justify-content: space-evenly;
+    padding-top: 40px;
+    row-gap: 40px;
+
+    .book-card {
+      background-image: image_url("lib/lib/book.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      .book {
+        width: 150px;
+        margin: 65px auto 0px;
+        position: relative;
+
+        .book-title {
+          color: white;
+          margin-left: 20px;
+          width: 120px;
+
+        }
+
+        .book-author {
+          position: absolute;
+          color: white;
+          font-size: 0.8rem;
+          left: 20px;
+          top: 70px;
+          width: 120px;
+        }
+
+        .del-bookshelf {
+          position: absolute;
+          color: white;
+          top: 110px;
+          right: 10px;
+        }
+      }
+    }  
+  }
+
   .operate-bookshelf-area {
-    width: 90%;
+    width: 1000px;
     height: 20px;
     margin: 0 auto;
     padding: 30px;
