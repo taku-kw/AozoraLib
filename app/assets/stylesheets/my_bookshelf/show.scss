@@ -1,8 +1,24 @@
 @import '../com/*';
 
 .show {
-  padding: 30px;
+  padding-top: 50px;
+  padding-bottom: 30px;
 
+  .title-area {
+    display: flex;
+    justify-content: center;
+
+    .title {
+      font-family: 'Parisienne', cursive;
+      text-align: center;
+      font-size: 3.2rem;
+      user-select: none;
+      margin-bottom: 45px;
+      display: inline-block;
+      border-bottom: 3px solid gray;
+    }
+  }
+  
   .bookshelf-area {
     width: 1000px;
     height: 730px;

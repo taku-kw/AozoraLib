@@ -1,26 +1,18 @@
 @import '../com/*';
 
 .lib {
-  padding: 30px 0px;
+  padding: 50px 0px;
 
-  .btn-area {
-    width: 100%;
-    height: 200px;
+  .title-area {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    .btn {
-      padding: 10px;
-      border-radius: 8px;
-      background-color: white;
-
-      &:hover {
-        color: red;
-      }
-      &:active {
-        opacity: 0.8;
-      }
+    justify-content: center;
+    
+    .title {
+      font-family: 'Parisienne', cursive;
+      display: inline-block;
+      font-size: 3.2rem;
+      user-select: none;
+      border-bottom: 3px solid gray;
     }
   }
 
@@ -47,6 +39,10 @@
         padding: 8px 0 5px;
         border: 1px solid black;
         z-index: 1;
+
+        &:hover {
+          background-color: hsl(44, 44%, 78%);
+        }
       }
     }
 
@@ -65,6 +61,10 @@
         padding: 8px 0 5px;
         border-right: 1px solid black;
         z-index: 1;
+
+        &:hover {
+          background-color: hsl(44, 44%, 78%);
+        }
       }
     }
 
@@ -81,6 +81,14 @@
         background-color: hsl(44, 44%, 88%);
         padding: 8px 0 5px;
         z-index: 1;
+
+        &:hover {
+          background-color: hsl(44, 44%, 78%);
+        }
+
+        &:active {
+          opacity: 0.7;
+        }
       }
 
       .item-3-kind {
