@@ -64,9 +64,24 @@
 
         .del-bookshelf {
           position: absolute;
-          color: white;
-          top: 110px;
-          right: 10px;
+          top: 102px;
+          right: 8px;
+          width: 26px;
+          height: 26px;
+          background-color: white;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .del-bookshelf-icon {
+            width: 22px;
+            border-radius: 50%;
+
+            &:active {
+              background-color: lightpink;
+            }
+          }
         }
       }
     }  

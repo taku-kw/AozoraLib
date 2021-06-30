@@ -9,7 +9,9 @@
           <%= result.author %>
         </div>
         <% if user_signed_in? then %>
-          <%= button_to '+', {controller: 'my_bookshelf', action: 'new'}, {method: 'get', remote: true, params: {book_id: result.id}, class: 'add-bookshelf'} %>
+          <%= button_to 'my_bookshelf/new', method: 'get', class: 'add-bookshelf', remote: true, params: {book_id: result.id} do %>
+            <%= image_tag '/assets/lib/lib/plus.svg', class: 'add-bookshelf-icon' %>
+          <% end %>
         <% end %>
       </div> 
     </a>

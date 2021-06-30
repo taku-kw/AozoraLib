@@ -8,7 +8,9 @@
         <div class='book-author'>
           <%= book.author %>
         </div>
-        <%= button_to '―', {controller: 'my_bookshelf', action: 'delete', book_id: book.id}, {method: 'delete', remote: 'true', class: 'del-bookshelf'} %>
+        <%= button_to '/my_bookshelf/delete', method: 'delete', remote: 'true', class: 'del-bookshelf', params: {book_id: book.id} do %>
+            <%= image_tag '/assets/my_bookshelf/show/minus.svg', class: 'del-bookshelf-icon' %>
+        <% end %>
       </div>
     </a>
   <% end %>
