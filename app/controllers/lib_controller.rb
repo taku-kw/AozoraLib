@@ -33,7 +33,7 @@ class LibController < ApplicationController
     session[:keyword] = params['keyword']
     session[:search_method] = 'author'
     session[:search_count] = Book.where('author_yomi like ?', params['keyword'] + '%').select(:author).distinct.count
-    if session[:search_count] <= session[:search_offset] then
+    if session[:search_count] <= (session[:search_offset] + SEARCH_OFFSET) then
       @next_flag = false
     else
       @next_flag = true
@@ -61,7 +61,7 @@ class LibController < ApplicationController
     session[:keyword] = params['keyword']
     session[:search_method] = 'class'
     session[:search_count] = Book.where('class_number like ?', '% ' + params['keyword'] + '%').count
-    if session[:search_count] <= session[:search_offset] then
+    if session[:search_count] <= (session[:search_offset] + SEARCH_OFFSET) then
       @next_flag = false
     else
       @next_flag = true
