@@ -231,8 +231,12 @@
             width: 22px;
             border-radius: 50%;
 
-            &:active {
+            &:hover {
               background-color: lightpink;
+            }
+
+            &:active {
+              background-color: hsl(0, 100%, 70%);
             }
           }
         }
