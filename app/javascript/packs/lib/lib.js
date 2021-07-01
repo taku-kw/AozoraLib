@@ -21,7 +21,7 @@ $('.item-area-1 a')
     $('.item-area-2').css('display', 'none')
   })
 
-$('.search-item,.result-area')
+$('.search-item')
   .on('click', function(){
     $('#result-area').append('<div id="loading-search"></div>')
   })
