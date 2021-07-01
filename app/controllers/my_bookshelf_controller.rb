@@ -36,8 +36,19 @@ class MyBookshelfController < ApplicationController
   end
 
   def new
-    logger.debug('book_id : ' + params['book_id'].to_s)
-    current_user.books += Book.where(id: params['book_id'])
+    @book = Book.find_by(id: params['book_id'])
+    rental_flag = false
+    for rental in current_user.rentals do
+      if rental.book_id == @book.id then
+        rental_flag = true
+        break
+      end
+    end
+    if rental_flag then
+      render 'duplicate'
+    else
+      current_user.books << @book
+    end
   end
 
   def delete

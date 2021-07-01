@@ -1,0 +1,7 @@
+<% time = Time.new %>
+<% unix_time = time.to_i %>
+$('.popup-area').html("<div class='popup popup-ng popup-<%= unix_time %>'><div class='popup-msg'><%= @book.title %></div><div class='popup-msg'>は既にマイ本棚にあります。</div></div>");
+
+setTimeout(function(){
+  $('.popup-<%= unix_time %>').remove()
+}, 5000)

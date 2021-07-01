@@ -21,12 +21,11 @@ $('.item-area-1 a')
     $('.item-area-2').css('display', 'none')
   })
 
-$('.search-item')
+$('.search-item,.result-area')
   .on('click', function(){
-    $('#result-area').append('<div id=#loading-search></div>')
+    $('#result-area').append('<div id="loading-search"></div>')
   })
 
-  $('.result-area')
-    .on('click', '.search-item-author', function() {
-      $('#result-area').append('<div id=#loading-search></div>')
-  })
+$('.lib').on('click', '.previous-result-click,.next-result-click', function(){
+  $('#result-area').append('<div id="loading-search"></div>')
+})

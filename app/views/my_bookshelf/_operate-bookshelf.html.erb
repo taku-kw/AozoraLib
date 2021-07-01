@@ -1,6 +1,6 @@
 <div id='previous-bookshelf'>
   <% if previous_flag == true then %>
-    <%= link_to '<', {action: 'show_previous'}, {remote: true, method: :get} %>
+    <%= link_to '<', {action: 'show_previous'}, {remote: true, method: :get, class: 'previous-bookshelf-click'} %>
   <% else %>
     <div class='disable-operate'><</div>
   <% end %>
@@ -8,7 +8,7 @@
 <span id='bookshelf-index'></span>
 <div id='next-bookshelf'>
   <% if next_flag == true then %>
-    <%= link_to '>', {action: 'show_next'}, {remote: true, method: :get} %>
+    <%= link_to '>', {action: 'show_next'}, {remote: true, method: :get, class: 'next-bookshelf-click'} %>
   <% else %>
     <div class='disable-operate'>></div>
   <% end %>
