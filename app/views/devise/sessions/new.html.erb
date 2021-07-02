@@ -35,6 +35,8 @@
         </div>
         <% end %>
 
+        <%= link_to 'Guest Log in', users_guest_sign_in_path, {method: :post, class: 'btn btn-text-large'} %>
+
         <%= render "devise/shared/links" %>
       </div>
     </div>
