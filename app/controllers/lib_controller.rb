@@ -14,7 +14,7 @@ class LibController < ApplicationController
         @author_name = Book.offset( rand(Book.count) ).first.author
         @author_summary = get_author_summary(@author_name)
         @author_image = get_author_image(@author_name)
-        @author_books = Book.where('author like ? ', @author_name).limit(4)            
+        @author_books = Book.where('author like ? ', @author_name).order('RANDOM()').limit(4)            
       rescue => exception
         err = 'Wiki API Err : ' + @author_name
         logger.warn err.colorize(:yellow)
