@@ -5,18 +5,33 @@
   <div class='popup-area'>
   </div>
   <div class='search-area'>
-    <div class='item-area-1'>
-      <div class='item-1'>
-        作品名
-        <%= render 'search-name-title' %>
+    <div class='search-display-area'>
+      <p class='title'>検索</p>
+      <div class='item-area'>
+        <div class='item-area-1'>
+          <div class='item-1'>
+            作品名
+            <%= render 'search-name-title' %>
+          </div>
+          <div class='item-1'>
+            作者名
+            <%= render 'search-name-author' %>
+          </div>
+          <div class='item-1'>
+            分野別
+            <%= render 'search-class' %>
+          </div>
+        </div>
       </div>
-      <div class='item-1'>
-        作者名
-        <%= render 'search-name-author' %>
-      </div>
-      <div class='item-1'>
-        分野別
-        <%= render 'search-class' %>
+      <div class='text-search-area'>
+        <%= form_with url: 'lib/search_text', method: :get, data: {remote: true}, class: 'text-search-form' do |f| %>
+          <p class='subtitle'>テキスト検索</p>
+          <div class='input-area'>
+            <%= f.select :search_method, ['作品名', '作者名'], {}, {class: 'select'} %>
+            <%= f.text_field :keyword, class: 'text-field' %>
+          </div>
+          <%= f.submit '検索実行', class: 'submit' %>
+        <% end %>
       </div>
     </div>
   </div>

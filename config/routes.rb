@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'search_name_author' => 'lib#search_name_author'
     get 'search_name_title_by_author' => 'lib#search_name_title_by_author'
     get 'search_class' => 'lib#search_class'
+    get 'search_text' => 'lib#search_text'
     get 'next_result' => 'lib#next_result'
     get 'previous_result' => 'lib#previous_result'
   end

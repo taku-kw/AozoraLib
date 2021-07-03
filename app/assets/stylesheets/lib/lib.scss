@@ -6,7 +6,7 @@
   .title-area {
     display: flex;
     justify-content: center;
-    
+
     .title {
       font-family: 'Parisienne', cursive;
       display: inline-block;
@@ -52,106 +52,206 @@
     0% {
       opacity: 1;
     }
+
     90% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
 
   .search-area {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
-    cursor: default;
+    height: 360px;
+    width: 1000px;
     user-select: none;
+    margin: 0px auto;
+    position: relative;
 
     $item-height: 30px;
 
-    .search-item {
+    .search-display-area {
       position: absolute;
-      display: block;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      padding-top: 8px;
-    }
-
-    .item-area-1 {
+      top: 50px;
+      height: 250px;
       width: 1000px;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-  
-      .item-1 {
-        width: 100px;
-        height: $item-height;
-        position: relative;
-        background-color: hsl(44, 44%, 88%);
-        padding: 8px 0 5px;
-        border: 1px solid black;
-        z-index: 1;
+      background-color: white;
 
-        &:hover {
-          background-color: hsl(44, 44%, 78%);
-        }
-      }
-    }
-
-    .item-area-2 {
-      position: absolute;
-      top: 100%;
-      width: 99px;
-      left: -1px;
-      display: none;
-      border: 1px solid black;
-
-      .item-2 {
-        width: 99px;
-        height: $item-height;
-        position: relative;
-        background-color: hsl(44, 44%, 88%);
-        padding: 8px 0 5px;
-        border-right: 1px solid black;
-        z-index: 1;
-
-        &:hover {
-          background-color: hsl(44, 44%, 78%);
-        }
-      }
-    }
-
-    .item-area-3 {
-      position: absolute;
-      left: 98px;
-      display: none;
-      top: -1px;
-      border: 1px solid black;
-
-      .item-3 {
-        width: 100px;
-        height: $item-height;
-        background-color: hsl(44, 44%, 88%);
-        padding: 8px 0 5px;
-        z-index: 1;
-        position: relative;
-
-        &:hover {
-          background-color: hsl(44, 44%, 78%);
-        }
-
-        &:active {
-          background-color: hsl(44, 44%, 58%);
-        }
+      .title {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        height: 30px;
+        font-size: 2.0rem;
+        border-bottom: 3px solid gray;
+        display: inline-block;
       }
 
-      .item-3-kind {
-        width: 210px;
+      .item-area {
+        position: absolute;
+        top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        cursor: default;
+
+        .search-item {
+          position: absolute;
+          display: block;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          padding-top: 8px;
+        }
+
+        .item-area-1 {
+          width: 1000px;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .item-1 {
+            width: 100px;
+            height: $item-height;
+            position: relative;
+            background-color: hsl(44, 44%, 88%);
+            padding: 8px 0 5px;
+            border: 1px solid black;
+            z-index: 1;
+
+            &:hover {
+              background-color: hsl(44, 44%, 78%);
+            }
+          }
+        }
+
+        .item-area-2 {
+          position: absolute;
+          top: 100%;
+          width: 99px;
+          left: -1px;
+          display: none;
+          border: 1px solid black;
+
+          .item-2 {
+            width: 99px;
+            height: $item-height;
+            position: relative;
+            background-color: hsl(44, 44%, 88%);
+            padding: 8px 0 5px;
+            border-right: 1px solid black;
+            z-index: 1;
+
+            &:hover {
+              background-color: hsl(44, 44%, 78%);
+            }
+          }
+        }
+
+        .item-area-3 {
+          position: absolute;
+          left: 98px;
+          display: none;
+          top: -1px;
+          border: 1px solid black;
+
+          .item-3 {
+            width: 100px;
+            height: $item-height;
+            background-color: hsl(44, 44%, 88%);
+            padding: 8px 0 5px;
+            z-index: 1;
+            position: relative;
+
+            &:hover {
+              background-color: hsl(44, 44%, 78%);
+            }
+
+            &:active {
+              background-color: hsl(44, 44%, 58%);
+            }
+          }
+
+          .item-3-kind {
+            width: 210px;
+          }
+        }
+      }
+
+      .text-search-area {
+        position: absolute;
+        top: 140px;
+        height: 100px;
+        width: 100%;
+
+        .text-search-form {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          column-gap: 52px;
+          height: 100%;
+
+          $item-height: 30px;
+          $btn-width: 100px;
+
+          .subtitle {
+            padding-top: 8px;
+            text-decoration: underline;
+          }
+
+          .input-area {
+            display: flex;
+            flex-direction: row;
+            width: 350px;
+
+            .select {
+              width: $btn-width;
+              height: $item-height;
+              border: 1px solid black;
+              cursor: pointer;
+              background-color: hsl(44, 44%, 88%);
+              padding: 6px 0px 0px 22px;
+              line-height: 1.6;
+              position: relative;
+
+              &:hover {
+                background-color: hsl(44, 44%, 78%);
+              }
+
+              &:active {
+                background-color: hsl(44, 44%, 58%);
+              }
+            }
+
+            .text-field {
+              width: 270px;
+              height: $item-height;
+              border-bottom: 1px solid black;
+              padding: 0px 5px;
+            }
+          }
+
+          .submit {
+            width: $btn-width;
+            height: $item-height;
+            text-align: center;
+            border: 1px solid black;
+            padding: 8px 0px 5px;
+            background-color: hsl(44, 44%, 88%);
+
+            &:hover {
+              background-color: hsl(44, 44%, 78%);
+            }
+
+            &:active {
+              background-color: hsl(44, 44%, 58%);
+            }
+          }
+        }
       }
     }
   }
@@ -190,6 +290,7 @@
         0% {
           transform: rotate(0deg);
         }
+
         100% {
           transform: rotate(360deg);
         }
@@ -213,22 +314,28 @@
 
     #previous-result {
       cursor: pointer;
+
       &:hover {
         color: red;
       }
+
       &:active {
         color: pink;
       }
     }
+
     #next-result {
       cursor: pointer;
+
       &:hover {
         color: red;
       }
+
       &:active {
         color: pink;
       }
     }
+
     #result-index {
       font-size: 1.2rem;
     }
@@ -269,6 +376,7 @@
         object-fit: cover;
         object-position: 50% 30%;
       }
+
       .author-summary {
         width: 440px;
         overflow: hidden;
@@ -337,7 +445,7 @@
           }
         }
       }
-    }  
+    }
   }
 
   .author-card-list {
