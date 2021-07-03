@@ -28,6 +28,10 @@
       &:hover {
         text-decoration: underline;
       }
+
+      &:active {
+        background-color: hsl(38, 100%, 67%);
+      }
     }
   }
 }
