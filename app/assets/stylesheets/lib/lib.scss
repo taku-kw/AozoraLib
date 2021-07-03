@@ -158,7 +158,7 @@
 
   .result-area {
     width: 1000px;
-    height: 730px;
+    height: 780px;
     margin: 0 auto;
     background-color: white;
     position: relative;
@@ -236,6 +236,43 @@
     .disable-operate {
       color: gray;
       cursor: default;
+    }
+  }
+
+  .recommend {
+    padding: 40px 40px 0px;
+    font-family: 'Shippori Mincho', serif;
+
+    .title {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid gray;
+      display: inline-block;
+    }
+
+    .author-name {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      text-decoration: underline;
+      display: block;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-height: 342px;
+
+      .author-image {
+        width: 440px;
+        object-fit: cover;
+        object-position: 50% 30%;
+      }
+      .author-summary {
+        width: 440px;
+        overflow: hidden;
+      }
     }
   }
 

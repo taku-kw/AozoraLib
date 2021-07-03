@@ -1,0 +1,27 @@
+<div class='recommend'>
+  <p class='title'>おすすめの人物</p>
+  <p class='author-name'><%= @author_name %></p>
+  <div class='description'>
+    <img src="<%= @author_image %>" class='author-image' />
+    <div class='author-summary'><%= @author_summary %></div>
+  </div>
+  <div class='book-card-list'>
+    <% for book in @author_books do %>
+      <a href=<%= book.link %> target="_blank" rel="noopener noreferrer" class='book-card'>
+        <div class='book'>
+          <div class='book-title'>
+            <%= book.title %>
+          </div>
+          <div class='book-author'>
+            <%= book.author %>
+          </div>
+          <% if user_signed_in? then %>
+            <%= button_to 'my_bookshelf/new', method: 'get', class: 'add-bookshelf', remote: true, params: {book_id: book.id} do %>
+              <%= image_tag '/assets/lib/lib/plus.svg', class: 'add-bookshelf-icon' %>
+            <% end %>
+          <% end %>
+        </div> 
+      </a>
+    <% end %>  
+  </div>
+</div>

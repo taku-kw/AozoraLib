@@ -17,7 +17,7 @@ CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |
   class_number = fg['分類番号']
   link = fg['XHTML/HTMLファイルURL']
   if /\p{katakana}/ === fg['姓'] then
-    author = fg['名'] + fg['姓']
+    author = fg['名'] + '・' + fg['姓']
     author_yomi = fg['名読みソート用'] + fg['姓読みソート用']
   else
     author = fg['姓'] + fg['名']
