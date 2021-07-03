@@ -1,0 +1,2 @@
+class RecommendAuthor < ApplicationRecord
+end

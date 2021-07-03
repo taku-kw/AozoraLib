@@ -9,8 +9,6 @@
 require 'csv'
 
 Book.destroy_all
-
-# CSV.foreach('tmp/storage/list_short.csv', headers: true) do |fg|
 CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |fg|
   title = fg['作品名']
   title_yomi = fg['ソート用読み']
@@ -26,3 +24,10 @@ CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |
 
   Book.create(title: title, title_yomi: title_yomi, author: author, author_yomi: author_yomi, class_number: class_number, link: link)
 end
+
+# Create Recommend Author Whitelist to DB
+authors = Book.all.select(:author).distinct().pluck(:author)
+for author in authors do
+  RecommendAuthor.create(author: author, rec_valid: true)
+end
+

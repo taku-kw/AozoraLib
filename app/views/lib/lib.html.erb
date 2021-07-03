@@ -36,7 +36,9 @@
     </div>
   </div>
   <div class='result-area' id='result-area'>
-    <%= render 'recommend' %>
+    <% if !@err_flag then %>
+      <%= render 'recommend' %>
+    <% end %>
   </div>
   <div class='operate-result-area' id='operate-result-area'>
     <%= render 'operate-result' %>

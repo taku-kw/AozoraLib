@@ -1,6 +1,7 @@
 class LibController < ApplicationController
   include LibHelper
   SEARCH_OFFSET = 12
+  ERR_CNT_MAX = 5
 
   def index
 
@@ -8,17 +9,24 @@ class LibController < ApplicationController
 
   def lib
     err = 'Not Exec'
-    while !err.empty? do
+    err_cnt = 0
+    @err_flag = false
+    while !err.empty? && err_cnt < ERR_CNT_MAX do
       begin
         err = ''
-        @author_name = Book.offset( rand(Book.count) ).first.author
+        @author_name = RecommendAuthor.offset( rand(RecommendAuthor.count) ).first.author
         @author_summary = get_author_summary(@author_name)
         @author_image = get_author_image(@author_name)
         @author_books = Book.where('author like ? ', @author_name).order('RANDOM()').limit(4)            
       rescue => exception
         err = 'Wiki API Err : ' + @author_name
         logger.warn err.colorize(:yellow)
+        err_cnt = err_cnt + 1
+        RecommendAuthor.find_by(author: @author_name).destroy
       end
+    end
+    if err_cnt >= ERR_CNT_MAX then
+      @err_flag = true
     end
   end
 

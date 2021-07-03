@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_053626) do
+ActiveRecord::Schema.define(version: 2021_07_03_121718) do
 
   create_table "books", force: :cascade do |t|
     t.text "title"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2021_06_17_053626) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "title_yomi"
     t.string "author_yomi"
+  end
+
+  create_table "recommend_authors", force: :cascade do |t|
+    t.text "author", null: false
+    t.boolean "rec_valid", default: true, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rentals", force: :cascade do |t|
