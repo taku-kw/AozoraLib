@@ -65,11 +65,15 @@ class MyBookshelfController < ApplicationController
 
   def delete
     current_user.rentals.find_by(book_id: params['book_id']).destroy
-    session[:my_bookshelf_search_count] = current_user.books.count
+    session[:my_bookshelf_search_count] = current_user.rentals.count
     if (session[:my_bookshelf_search_count] - session[:my_bookshelf_search_offset] == 0) && (session[:my_bookshelf_search_count] != 0) then
       session[:my_bookshelf_search_offset] -= SEARCH_OFFSET
     end
-    @books = current_user.books.limit(SEARCH_OFFSET).offset(session[:my_bookshelf_search_offset])
+    rentals = current_user.rentals.order(created_at: 'desc').limit(SEARCH_OFFSET).offset(session[:my_bookshelf_search_offset])
+    @books = []
+    for rental in rentals
+      @books.push(Book.find_by(id: rental.book_id))
+    end
     if session[:my_bookshelf_search_count] <= (session[:my_bookshelf_search_offset] + SEARCH_OFFSET) then
       @next_flag = false
     else
