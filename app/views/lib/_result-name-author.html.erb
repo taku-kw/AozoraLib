@@ -1,3 +1,4 @@
+<%= render 'lib/desc-search' %>
 <div class='author-card-list'>
   <% for result in search_result do %>
     <%= link_to 'lib/search_name_title_by_author?keyword=' + result.author , remote: true, method: :get, class: 'search-item-author' do %>

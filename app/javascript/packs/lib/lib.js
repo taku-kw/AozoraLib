@@ -26,6 +26,6 @@ $('.search-item')
     $('#result-area').append('<div id="loading-search"></div>')
   })
 
-$('.lib').on('click', '.previous-result-click,.next-result-click', function(){
+$('.lib').on('click', '.search-item-author,.previous-result-click,.next-result-click', function(){
   $('#result-area').append('<div id="loading-search"></div>')
 })

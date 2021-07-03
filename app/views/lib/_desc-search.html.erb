@@ -1,0 +1,22 @@
+<div class='desc-search'>
+  <div class='desc'>
+    <% case session[:search_method] %>
+    <% when 'title' then %>
+      作品名  
+    <% when 'author' then %>
+      作者名
+    <% when 'title_by_author' then %>
+      作者名
+    <% when 'class' then %>
+      分野別
+    <% when 'text_title' then %>
+      作品名
+    <% when 'text_author' then %>
+      作者名
+    <% end %>
+    "<%= session['keyword'] %>" の検索結果
+  </div>
+  <div class='hit-area'>
+    <p class='hit'>該当件数 : <%= session[:search_count] %>件</p>
+  </div>
+</div>

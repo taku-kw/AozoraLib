@@ -5,7 +5,11 @@
     <div class='disable-operate'><</div>
   <% end %>
 </div>
-<span id='bookshelf-index'></span>
+<span id='bookshelf-index'>
+  <%= session[:my_bookshelf_search_offset]/12 + 1 %>
+  /
+  <%= session[:my_bookshelf_search_count]/12 + 1 - ((session[:my_bookshelf_search_count]%12 == 0 && session[:my_bookshelf_search_count] != 0) ? 1 : 0) %>
+</span>
 <div id='next-bookshelf'>
   <% if next_flag == true then %>
     <%= link_to '>', {action: 'show_next'}, {remote: true, method: :get, class: 'next-bookshelf-click'} %>
