@@ -49,3 +49,41 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .header {
+    
+    .logo-area {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+  
+      .logo {
+        position: block;
+        font-size: 4.2rem;
+        color: $font-color-gold;
+        padding-bottom: 40px;
+  
+        &:active {
+          opacity: 0.8;
+        }
+      }
+    }  
+
+    .session-area {
+      width: 100%;
+      height: 40px;
+      background-color: hsl(14, 46%, 61%);
+      position: absolute;
+      top: auto;
+      right: auto;
+      bottom: 0px;
+      border-radius: 0 0 0 0;
+  
+    }
+  }
+}

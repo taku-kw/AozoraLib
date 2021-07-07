@@ -499,3 +499,38 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .lib {
+    .search-area {
+      height: 450px;
+      width: 100%;
+
+      .search-display-area {
+        height: 350px;
+        width: 100%;
+
+        .item-area {
+          width: 100%;
+
+          .item-area-1 {
+            width: 100%;
+          }
+
+          .item-area-3-kind {
+            left: auto;
+            right: 98px;
+          }
+        }
+        .text-search-area {
+          height: 200px;
+
+          .text-search-form {
+            flex-direction: column;
+            row-gap: 25px;
+          }
+        }
+      }
+    }
+  }
+}

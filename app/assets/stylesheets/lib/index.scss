@@ -35,3 +35,17 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  index {
+    width: 100%;
+    height: $main-full-height;
+    background-image: image_url("lib/index/bookshelf.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: hsl(0, 0%, 98%);
+    position: relative;
+  
+  }
+}
