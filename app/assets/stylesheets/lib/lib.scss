@@ -532,5 +532,85 @@
         }
       }
     }
+
+    .result-area {
+      height: auto;
+      width: 100%;
+
+      .desc-search {
+        height: auto;
+        padding: 10%;
+
+        .desc {
+          border-bottom: none;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .recommend {
+      padding: 10% 0 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+     
+      .title {
+        margin: 0;
+        margin-left: 10%;
+        width: 232px;
+      }
+
+      .author-name {
+        margin: 0;
+      }
+
+      .description {
+        flex-direction: column;
+        justify-content: center;
+        max-height: none;
+        row-gap: 20px;
+
+        .author-image {
+          width: 100%;
+        }
+
+        .author-summary {
+          padding: 0 10%;
+          width: 100%;
+        }
+      }
+    }
+
+    .book-card-list {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 0px;
+      padding-bottom: 20px;
+
+      .book-card {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .author-card-list {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 0px;
+      padding-bottom: 20px;
+
+      .author-card {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .operate-result-area {
+      width: 100%;
+    }
   }
 }

@@ -29,3 +29,7 @@ $('.search-item')
 $('.lib').on('click', '.search-item-author,.previous-result-click,.next-result-click', function(){
   $('#result-area').append('<div id="loading-search"></div>')
 })
+
+$('.lib').on('click', '.previous-result-click,.next-result-click', function(){
+  $("html,body").animate({scrollTop:$('.result-area').offset().top});
+})

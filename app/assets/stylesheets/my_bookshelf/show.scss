@@ -160,3 +160,32 @@
   }
 
 }
+
+@media screen and (max-width: 480px) {
+  .show {
+
+    .bookshelf-area {
+      width: 100%;
+      height: auto;
+      padding-top: 10%;
+    }
+
+    .book-card-list {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 0px;
+      padding-bottom: 20px;
+
+      .book-card {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .operate-bookshelf-area {
+      width: 100%;
+    }
+  }
+}
