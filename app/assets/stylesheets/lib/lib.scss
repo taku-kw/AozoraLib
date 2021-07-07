@@ -537,6 +537,10 @@
       height: auto;
       width: 100%;
 
+      #loading-search {
+        height: calc(100% + 60px);
+      }
+
       .desc-search {
         height: auto;
         padding: 10%;

@@ -168,6 +168,10 @@
       width: 100%;
       height: auto;
       padding-top: 10%;
+
+      #loading-search {
+        height: calc(100% + 60px);
+      }
     }
 
     .book-card-list {
