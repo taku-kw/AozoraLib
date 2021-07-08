@@ -594,8 +594,21 @@
       padding-bottom: 20px;
 
       .book-card {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
+
+        .book {
+          margin: 50px auto 0px;
+
+          .book-author {
+            top: 65px;
+          }
+
+          .add-bookshelf {
+            top: 100px;
+            right: 12px;  
+          }
+        }
       }
     }
 
@@ -608,8 +621,8 @@
       padding-bottom: 20px;
 
       .author-card {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
       }
     }
 
