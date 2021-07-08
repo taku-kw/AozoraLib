@@ -76,3 +76,24 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .devise_registrations_new {
+    min-height: 800px;
+
+    .form-area {
+      width: 100%;
+      height: 700px;
+
+      .contain {
+        .type-area {
+          grid-template-columns: 1fr;
+          margin-bottom: 120px;
+        }
+        .alert-pos {
+          top: 290px;
+        }
+      }
+    }
+  }
+}

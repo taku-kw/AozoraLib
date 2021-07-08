@@ -76,3 +76,25 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .devise_sessions_new {
+    min-height: 750px;
+
+    .form-area {
+      width: 100%;
+      height: 600px;
+
+      .contain {
+        .type-area {
+          grid-template-columns: 1fr;
+
+        }
+        .alert-pos {
+          top: 200px;
+
+        }
+      }
+    }
+  }
+}
