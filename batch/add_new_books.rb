@@ -4,14 +4,17 @@ require 'open-uri'
 
 class AddNewBooks
   def self.execute
+    p ("exec add_new_books.rb")
+
     aozora_url = 'https://www.aozora.gr.jp/index_pages/whatsnew1.html'
     aozora_top_url = 'https://www.aozora.gr.jp'
     
     fd_new_books = URI.open(aozora_url)
     doc_new_books = Nokogiri::HTML.parse(fd_new_books)
     
-    latest_book_title = Book.order(release_date: 'DESC').first.title.to_s
-    
+    latest_book_title = Book.order(release_date: 'DESC', created_at: 'DESC').first.title.to_s
+   
+    books = [] 
     header_flag = true;
     doc_new_books.xpath('//tr[@valign="top"]').each do |node|
       if header_flag then
@@ -50,11 +53,16 @@ class AddNewBooks
         # release_date
         book_hash["release_date"] = new_book_release_date
 
-        Book.create(book_hash)
+        p book_hash
+        books.push(Book.new(book_hash))
 
         RecommendAuthor.find_or_create_by(author: book_hash["author"])
       end
     end
+    for book in books.reverse do
+      book.save
+    end
+    p ("done add_new_books.rb")
   end
 end
 
