@@ -59,3 +59,7 @@ gem 'devise-i18n-views'
 
 # Colorize logger
 gem 'colorize'
+
+# Batch of Add New Book
+gem 'nokogiri'
+gem 'open-uri'

@@ -26,9 +26,10 @@ class LibController < ApplicationController
     err_cnt = 0
     @err_flag = false
     while !err.empty? && err_cnt < ERR_CNT_MAX do
+      err = ''
+      author = RecommendAuthor.where(can_webapi: true).order('RANDOM()').first
+      @author_name = author.author
       begin
-        err = ''
-        @author_name = RecommendAuthor.offset( rand(RecommendAuthor.count) ).first.author
         @author_summary = get_author_summary(@author_name)
         @author_image = get_author_image(@author_name)
         @author_books = Book.where('author like ? ', @author_name).order('RANDOM()').limit(4)            
@@ -36,7 +37,8 @@ class LibController < ApplicationController
         err = 'Wiki API Err : ' + @author_name
         logger.warn err.colorize(:yellow)
         err_cnt = err_cnt + 1
-        RecommendAuthor.find_by(author: @author_name).destroy
+        author.can_webapi = false
+        author.save
       end
     end
     if err_cnt >= ERR_CNT_MAX then

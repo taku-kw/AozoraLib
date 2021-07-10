@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_03_121718) do
+ActiveRecord::Schema.define(version: 2021_07_10_061608) do
 
   create_table "books", force: :cascade do |t|
     t.text "title"
@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 2021_07_03_121718) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "title_yomi"
     t.string "author_yomi"
+    t.date "release_date"
   end
 
   create_table "recommend_authors", force: :cascade do |t|
     t.text "author", null: false
-    t.boolean "rec_valid", default: true, null: false
+    t.boolean "can_webapi", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

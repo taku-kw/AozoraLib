@@ -21,13 +21,15 @@ CSV.foreach('tmp/storage/list_person_all_extended_utf8.csv', headers: true) do |
     author = fg['姓'] + fg['名']
     author_yomi = fg['姓読みソート用'] + fg['名読みソート用']
   end
+  release_date = fg['公開日']
 
-  Book.create(title: title, title_yomi: title_yomi, author: author, author_yomi: author_yomi, class_number: class_number, link: link)
+  Book.create(title: title, title_yomi: title_yomi, author: author, author_yomi: author_yomi, class_number: class_number, link: link, release_date: release_date)
 end
 
 # Create Recommend Author Whitelist to DB
+RecommendAuthor.destroy_all
 authors = Book.all.select(:author).distinct().pluck(:author)
 for author in authors do
-  RecommendAuthor.create(author: author, rec_valid: true)
+  RecommendAuthor.create(author: author, can_webapi: true)
 end
 
