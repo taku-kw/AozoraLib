@@ -20,6 +20,8 @@ class LibController < ApplicationController
   end
 
   def lib
+    @new_release_books = Book.order(release_date: 'DESC').limit(5)
+
     session[:search_offset] = 0
     session[:search_count] = 0    
     err = 'Not Exec'

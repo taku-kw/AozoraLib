@@ -4,6 +4,16 @@
   </div>
   <div class='popup-area'>
   </div>
+  <div class='new-release-area'>
+    <div class='display-area'>
+      <p class='title'>新規公開作品</p>
+      <div class='new-release-books'>
+        <% for book in @new_release_books %>
+          <p class='new-release-book'><%= book.release_date %> : <a href=<%= book.link %> target="_blank" rel="noopener noreferrer" class='link'><%= book.title %></a> / <%= book.author %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <div class='search-area'>
     <div class='search-display-area'>
       <p class='title'>検索</p>
