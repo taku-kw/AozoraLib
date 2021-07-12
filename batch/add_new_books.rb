@@ -12,8 +12,6 @@ class AddNewBooks
     fd_new_books = URI.open(aozora_url)
     doc_new_books = Nokogiri::HTML.parse(fd_new_books)
     
-    latest_book_title = Book.order(release_date: 'DESC', created_at: 'DESC').first.title.to_s
-   
     books = [] 
     header_flag = true;
     doc_new_books.xpath('//tr[@valign="top"]').each do |node|
@@ -24,7 +22,7 @@ class AddNewBooks
         new_book_url = aozora_top_url + node.css('a').attribute('href').to_s.slice(2..)
         new_book_release_date = node.css('td')[0].inner_text.strip
     
-        if latest_book_title == new_book_title then
+        if Book.find_by(title: new_book_title) then
           break
         end
     
